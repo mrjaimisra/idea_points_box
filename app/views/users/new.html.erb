@@ -1,0 +1,20 @@
+<h1>idea points box</h1>
+<hr/>
+
+<div class="create-account">
+    <h2>Create Account</h2>
+      <%= form_for(@user) do |f| %>
+        <%= f.label :username, "New Username" %>
+        <%= f.text_field :username %><br>
+
+        <%= f.label :password, "New Password" %>
+        <%= f.password_field :password %><br>
+
+        <%= f.submit "Create Account" %>
+      <% end %>
+</div>
+
+<div class="sign-in">
+  <p>If you already have an account click below to enter your username and password</p>
+  <%= link_to "Login", login_path %>
+</div>
