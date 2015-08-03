@@ -8,10 +8,11 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      flash[:greeting] = "Welcome, #{@user.username}."
+      flash[:greeting] = "Welcome, #{@user.username}"
       redirect_to @user
     else
-
+      flash[:errors] = "Username '#{@user.username}' is already in use"
+      redirect_to new_user_path
     end
   end
 

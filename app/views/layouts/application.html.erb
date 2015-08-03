@@ -7,13 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <h3>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% end %>
+    </h3>
 
-<div>
   <% flash.each do |type, msg| %>
-    <%= content_tag :div, msg, class: "flash_#{type}" %>
+    <%= content_tag :div, msg, class: ".flash_#{type}" %>
   <% end %> <br>
-
-</div>
 
 <%= yield %>
 
