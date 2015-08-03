@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'a user visits the login page' do
-  it 'allows a user to create an account' do
+describe 'a users visits the login page' do
+  it 'allows a users to create an account' do
     visit root_path
 
     click_link "Create Account"
@@ -41,7 +41,7 @@ describe 'a user visits the login page' do
     expect(current_path).to eq(new_user_path)
   end
 
-  it 'allows a user to login' do
+  it 'allows a users to login' do
     visit root_path
     user = User.create(username: "Rowdy", password: "Ronda")
 
@@ -54,7 +54,7 @@ describe 'a user visits the login page' do
     expect(page).to have_content("Rowdy's ideas:")
   end
 
-  it 'errors when a user attempts to login with an unknown username' do
+  it 'errors when a users attempts to login with an unknown username' do
     visit root_path
 
     fill_in "Username", with: "Rowby"
@@ -66,7 +66,7 @@ describe 'a user visits the login page' do
 
   end
 
-  it 'errors when a user enters an incorrect password' do
+  it 'errors when a users enters an incorrect password' do
     visit root_path
     user = User.create(username: "Rowdy", password: "Ronda")
 

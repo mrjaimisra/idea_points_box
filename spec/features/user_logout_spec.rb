@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'a user visits the show page and clicks logout' do
+describe 'a users visits the show page and clicks logout' do
 
-    it 'allows a user to logout' do
+    it 'allows a users to logout' do
       visit root_path
 
       user = User.create(username: "Rowdy", password: "Ronda")
